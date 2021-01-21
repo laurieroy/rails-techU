@@ -2,7 +2,7 @@ require 'test_helper'
 
 class CourseTest < ActiveSupport::TestCase
 	def setup
-		@course = Course.new(name: "Intro to Computer Science")
+		@course = Course.new(name: "Intro to Computer Science, course_no: "CS111")
 	end
 
 	test "course should be valid" do
@@ -10,14 +10,14 @@ class CourseTest < ActiveSupport::TestCase
 	end
 
 	test "course ID number should be present" do
-		assert @course.
+		assert @course.course_no
 	end
 
-	test "course number should have three digits" do
+	test "course ID number should have three digits" do
 
 	end
 
-	test "course number should start with CS" do
+	test "course ID should start with CS" do
 
 	end
 
@@ -33,7 +33,7 @@ class CourseTest < ActiveSupport::TestCase
 	end
 
 	test "name should be not be too short" do
-
+		@course.name 
 	end
 
 	test "name should be not be too long" do

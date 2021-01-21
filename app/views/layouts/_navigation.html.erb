@@ -10,16 +10,16 @@
 		<li><a href="#!">two</a></li>
 		<li><a href="#!">three</a></li>
 	</ul>
-	<nav>
+	<nav class="blue-grey lighten-2">
 		<div class="container">
 			<div class="nav-wrapper">
-				<a href="#" class="brand-logo right">Tech U</a>
+				<%= link_to 'Tech U', root_path, class:"brand-logo right" %>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
-					<li><a href="#">Courses</a></li>
-					<li><a href="#">Enrollments</a></li>
-					<li><a href="#">Account</a></li>
+					<li><%= link_to 'Courses', root_path %></li>
+					<li><%= link_to 'Enrollments', root_path %></li>
+					<li><%= link_to 'Account', root_path %></li>
 					<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i
 								class="material-icons right">arrow_drop_down</i></a></li>
 				</ul>
