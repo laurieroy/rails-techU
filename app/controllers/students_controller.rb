@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   skip_before_action :require_user, only: [:new, :create]
-  before_action :set_student, only: [:show, :edit, :update]
-  before_action :require_same_student, only [:edit, :update]
+  before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :require_same_student, only: [:edit, :update, :destroy]
 
   def index
     @students = Student.all
