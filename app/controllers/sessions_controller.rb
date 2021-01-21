@@ -1,13 +1,13 @@
 class SessionsController < ApplicationController
 	skip_before_action :require_user, only: [:new, :create]
 
-	def new
-		
+	def new	
 	end
 
 	def create
-		student = Student.find_by(email: params[:sessions][:email].downcase)
-		if student && student.authenticate(params[:sessions][:password])
+		byebug
+		student = Student.find_by(email: params[:session][:email].downcase)
+		if student && student.authenticate(params[:session][:password])
 			session[:student_id] = student.id
 			flash.now[:notice] = "You have successfully logged in"
 			redirect_to student
