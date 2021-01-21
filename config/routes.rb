@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :students, except: [:destroy]
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  post 'logout', to: 'sessions#destroy'
+  delete 'logout', to: 'sessions#destroy'
   post 'course_enroll', to: 'course_students#create'
 end
