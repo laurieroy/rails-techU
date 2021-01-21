@@ -5,14 +5,13 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		byebug
-		student = Student.find_by(email: params[:session][:email].downcase)
-		if student && student.authenticate(params[:session][:password])
+		student = Student.find_by(email: params[:sessions][:email].downcase)
+		if student && student.authenticate(params[:sessions][:password])
 			session[:student_id] = student.id
 			flash.now[:notice] = "You have successfully logged in"
 			redirect_to student
 		else
-			flash.now[:notice] = "Something was wrong with your login information"
+			flash.now[:alert] = "Something was wrong with your login information"
 			render 'new'
 		end
 	end
