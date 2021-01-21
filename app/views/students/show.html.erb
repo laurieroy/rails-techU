@@ -6,7 +6,9 @@
 				<p>Email: <%= @student.email %></p>
 			</div>
 		</div>
-		<%= link_to '<i class="material-icons right">mode_edit</i>Edit your profile'.html_safe, 
-			edit_student_path(@student), class: "waves-effect deep-orange darken-4 btn" %>
+		<% if current_user == @student %>
+			<%= link_to '<i class="material-icons right">mode_edit</i>Edit your profile'.html_safe, 
+				edit_student_path(@student), class: "waves-effect deep-orange darken-4 btn" %>
+		<% end %>
 	</div>
 </div>
