@@ -3,4 +3,6 @@ class Course < ApplicationRecord
 	validates :course_no, presence: true, length: { minimum: 5, max: 5 }
 	validates :description, presence: true, length: { minimum: 10, max: 300 }
 	validates_uniqueness_of :name, :course_no
+	has_many :course_students
+	has_many :students, through: :course_students
 end
