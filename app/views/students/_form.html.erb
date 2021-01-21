@@ -24,8 +24,21 @@
 							</div>
 						</div>
 						<div class="row">
+							<div class="input-field col s6">
+								<%= f.password_field :password, placeholder: "Choose a password", autofocus: true  %>	
+								<%= f.label :password %>
+							</div>
+
+							<div class="input-field col s6">
+								<%= f.password_field :password_confirmation, placeholder: "Confirm your password", autofocus: true  %>	
+								<%= f.label :password_confirmation %>
+							</div>
+						</div>
+						<div class="row">
 							<div class="input-field col s12">
-								<%= f.submit(@student.new_record? ? "Sign Up" : "Submit Updates", class: "btn deep-orange darken-4") %>
+								<%= f.button(@student.new_record? ? '<i class="material-icons right">arrow_forward</i>Sign Up'.html_safe 
+									: '<i class="material-icons right">arrow_forward</i>Submit Updates'.html_safe, 
+									class: "btn deep-orange darken-4") %>
 							</div>
 						</div>
 					<% end %>
