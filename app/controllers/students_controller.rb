@@ -35,19 +35,21 @@ class StudentsController < ApplicationController
       render 'edit'
     end
   end
+
   private
-  def student_params
-    params.require(:student).permit(:first_name, :last_name, :email, :password, :password_confirmation)
-  end
-
-  def set_student
-    @student = Student.find(params[:id])
-  end
-
   def require_same_student
     if current_user != @student
       flash.now[:notice] = "You can only edit your own profile"
       redirect_to student_path(current_user)
     end
   end
+
+  def set_student
+    @student = Student.find(params[:id])
+  end
+
+  def student_params
+    params.require(:student).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
 end

@@ -1,54 +1,68 @@
 # Tech University
+
 This web app demos a university site where students can login, and enroll in courses. They have a simple profile that shows course enrollment.
 
 My intent was to build the back-end using TDD, and Materialize as the front-end, prompted by the story in the third project in Mashrur Hossain's Complete Ruby on Rails developer course through Udemy. It was built in Ruby 2.6.3, Rails 5.2.4.4 with a SQLite3 db in development.
 
-I decided that TDD was too much right now, and decided to add the tests in later.
-
-Prompted by this, I will make Students and Courses models, with Enrollments being a joint table. Using devise for the users makes sense so they can change passwords easily, and data is protected.
+Prompted by this, I made Students and Courses models, with Enrollments (course_students) being a joint table. Using devise for the users makes sense so they can change passwords easily, and data is protected. However, since I had already made the Student and haven't implemented the other roles yet, I havne't added in devise yet.
 
 Things Considered: Are the users only students or should we cover teachers and other roles? Will the course instructor be listed? TA? Max/min enrollment? Uniqueness of course name is not specified.
 
-These questions aren't addressed in the model shown, so can be add ons later. I'll just build a MVP, without testing, as practice for what I've learned so far in Rails.  
+These questions aren't addressed in the model shown, so can be add ons later. I'll just build a MVP, without testing, as practice for what I've learned so far in Rails.
 
 It was tested on Chrome and Safari browsers.
+
 ## Steps Followed
 
-* Build a Student model: names, email, 
-* Pages- about
-* Build a Course model: course_no (CSXXX), name, description
+- Build a Student model: names, email
+- Pages- about
+- Build a Course model: course_no (CSXXX), name, description
+- Add materialize as CSS
+- Add flash messaging, need to style conditionally
+- Add password, sessions
+- Restrict routes, actions
+- Add many-many associaton for students and courses
+- Edit Profile (name, email)
+- At this point, (commit: 088909ac3a1913)  my project ~matches the tutorial, after this are my add-ons
+- Add sign up page
 
-* Edit Profile (name, email, submit button)
 
 ## To Run App on your local machine:
 
 From the terminal: Clone the repo and change to that directory:
+
 ```
 $ git clone https://github.com/laurieroy/rails-tech-univ
 ```
 
 Install the gems locally:
+
 ```
 $ bundle install
 ```
 
-Create databases: 
+Create databases:
+
 ```
 $ rails db:create
 ```
 
 Run migrations:
+
 ```
 $ rails db:migrate
 ```
-<!-- 
+
+<!--
 Seed database with initial 9 recipes: (optional). It runs the code found in `~/rails_react_recipe/db/seeds.rb`.
 ```
 $ rails db:seed
 ``` -->
 
 ## Run
+
 To run your server locally
+
 ```
 $ rails s
 ```
@@ -58,3 +72,12 @@ By default the application will listen on port 3000. Nav to http://localhost:300
 To shut down the server use `Ctrl-C`
 
 ### TODO:
+
+- Add in devise for user management
+- Add roles
+- Add in testing
+- Add in links to About page
+- Add contact, help
+- Add Sign Up link
+- Seed courses, users
+- Add styling to messages
