@@ -2,6 +2,12 @@
 
 This web app demos a university site where students can login, and enroll in courses. They have a simple profile that shows course enrollment.
 
+![courses screenshot](app/assets/images/tech_u_course_listing.png)
+
+Casual browsers see the course listings, but must login to see other students.
+
+![student directory]()
+
 My intent was to build the back-end using TDD, and Materialize as the front-end, prompted by the story in the third project in Mashrur Hossain's Complete Ruby on Rails developer course through Udemy. It was built in Ruby 2.6.3, Rails 5.2.4.4 with a SQLite3 db in development.
 
 Prompted by this, I made Students and Courses models, with Enrollments (course_students) being a joint table. Using devise for the users makes sense so they can change passwords easily, and data is protected. However, since I had already made the Student and haven't implemented the other roles yet, I havne't added in devise yet.
@@ -78,6 +84,7 @@ To shut down the server use `Ctrl-C`
 - Add in testing
 - Add in links to About page
 - Add contact, help
-- Add Sign Up link
 - Seed courses, users
 - Add styling to messages
+- Fix hamburger doesn't always expand
+
