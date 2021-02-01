@@ -1,12 +1,15 @@
-# Tech University
+# Tech University - WIP
 
 This web app demos a university site where students can login, and enroll in courses. They have a simple profile that shows course enrollment.
 
-![courses screenshot](app/assets/images/tech_u_course_listing.png)
+![courses screenshot](app/assets/images/TechU-logoutDropdown-courseListing.png)
 
 Casual browsers see the course listings, but must login to see other students.
 
-![student directory]()
+![sign up screenshot](app/assets/images/techU_signup.png)
+
+
+![student directory](app/assets/images/techU_student_dir.png)
 
 My intent was to build the back-end using TDD, and Materialize as the front-end, prompted by the story in the third project in Mashrur Hossain's Complete Ruby on Rails developer course through Udemy. It was built in Ruby 2.6.3, Rails 5.2.4.4 with a SQLite3 db in development.
 
@@ -29,9 +32,8 @@ It was tested on Chrome and Safari browsers.
 - Restrict routes, actions
 - Add many-many associaton for students and courses
 - Edit Profile (name, email)
-- At this point, (commit: 088909ac3a1913)  my project ~matches the tutorial, after this are my add-ons
+- At this point, (commit: 088909ac3a1913) my project ~matches the tutorial, after this are my add-ons
 - Add sign up page
-
 
 ## To Run App on your local machine:
 
@@ -81,10 +83,10 @@ To shut down the server use `Ctrl-C`
 
 - Add in devise for user management
 - Add roles
-- Add in testing
-- Add in links to About page
+<!-- - Add in testing -->
 - Add contact, help
 - Seed courses, users
 - Add styling to messages
 - Fix hamburger doesn't always expand
-
+- Labels sometimes jump
+- Add in links to About page
